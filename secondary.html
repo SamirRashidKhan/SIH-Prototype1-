@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secondary School (Classes 9-10) – Smart Education</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6;}
+    nav{background:linear-gradient(120deg,#4CAF50,#2E7D32);padding:14px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.1);}
+    nav .logo{font-size:1.4em;font-weight:700;color:#fff;}
+    nav .back-link{color:#fff;text-decoration:none;padding:8px 16px;border:2px solid rgba(255,255,255,.3);border-radius:25px;transition:.3s;}
+    nav .back-link:hover{background:rgba(255,255,255,.2);border-color:#fff;}
+    .hero{background:linear-gradient(135deg,#FF7043 0%,#F4511E 50%,#BF360C 100%);color:#fff;text-align:center;padding:80px 20px;}
+    .hero h1{font-size:2.8em;margin-bottom:15px;}
+    .hero .grade-info{font-size:1.3em;margin-bottom:10px;opacity:.9;}
+    .hero .tagline{font-size:1.1em;max-width:750px;margin:0 auto;}
+    .content{max-width:1200px;margin:0 auto;padding:50px 20px;}
+    .section{margin-bottom:50px;}
+    .section h2{font-size:2em;color:#BF360C;border-bottom:3px solid #FF7043;padding-bottom:10px;margin-bottom:25px;}
+    .section p{text-align:justify;font-size:1.1em;margin-bottom:20px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin:30px 0;}
+    .card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:.3s;border-left:5px solid #F4511E;}
+    .card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.12);}
+    .card h3{color:#E64A19;margin-bottom:15px;font-size:1.3em;}
+    .card .icon{font-size:2.2em;margin-bottom:15px;display:block;}
+    .labs{background:linear-gradient(135deg,#E3F2FD 0%,#E1F5FE 100%);padding:40px;border-radius:15px;margin:40px 0;}
+    .labs h3{text-align:center;color:#0277BD;font-size:1.8em;margin-bottom:30px;}
+    .labs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .labs-item{background:#fff;padding:20px;border-radius:10px;border-top:4px solid #29B6F6;}
+    .labs-item h4{color:#0277BD;margin-bottom:10px;font-size:1.2em;}
+    .cta{background:linear-gradient(135deg,#4CAF50,#2E7D32);color:#fff;text-align:center;padding:40px;border-radius:15px;margin:40px 0;}
+    .cta h3{font-size:1.8em;margin-bottom:15px;}
+    .cta a{display:inline-block;background:#fff;color:#2E7D32;padding:12px 30px;border-radius:25px;text-decoration:none;font-weight:700;margin-top:10px;transition:.3s;}
+    .cta a:hover{background:#f0f0f0;transform:translateY(-2px);}
+    footer{background:#2E7D32;color:#fff;text-align:center;padding:30px 20px;margin-top:50px;}
+    @media(max-width:768px){.hero h1{font-size:2.2em}.section h2{font-size:1.6em}nav{flex-direction:column;text-align:center}.content{padding:30px 15px}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Smart Education</div>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <h1>Secondary School</h1>
+  <p class="grade-info">Classes 9-10 • Ages 14-15</p>
+  <p class="tagline">Foundation for board exams and academic selection. Virtual labs, online classrooms, and tailored learning paths for deeper understanding.</p>
+</section>
+
+<div class="content">
+
+  <div class="section">
+    <h2>Board-Exam Readiness Through Smart Learning</h2>
+    <p>Classes 9-10 mark a decisive stage when students consolidate subject knowledge and prepare for high-stakes board examinations. Smart education combines adaptive platforms, data-driven feedback, and immersive simulations to strengthen conceptual mastery and exam confidence.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="icon">🧪</span>
+      <h3>Virtual Science Labs</h3>
+      <p>Simulations for physics, chemistry, and biology practicals let students rehearse experiments repeatedly and visualize complex phenomena safely.</p>
+    </div>
+    <div class="card">
+      <span class="icon">📚</span>
+      <h3>Personalized Study Plans</h3>
+      <p>AI analytics pinpoint weak areas, create tailored revision schedules, and recommend targeted questions for board-exam preparation.</p>
+    </div>
+    <div class="card">
+      <span class="icon">🎓</span>
+      <h3>Online Classroom Masterclasses</h3>
+      <p>Live expert sessions and recorded lectures clarify difficult topics, offer problem-solving strategies, and provide mentorship for competitive exams.</p>
+    </div>
+    <div class="card">
+      <span class="icon">📝</span>
+      <h3>Smart Assessment & Feedback</h3>
+      <p>Auto-graded tests supply instant diagnostics, while analytics dashboards track progress against syllabus benchmarks and board patterns.</p>
+    </div>
+  </div>
+
+  <div class="labs">
+    <h3>Cutting-Edge Virtual Lab Experiences</h3>
+    <div class="labs-grid">
+      <div class="labs-item">
+        <h4>⚛️ Physics Simulations</h4>
+        <p>Explore electromagnetism, optics, and mechanics with manipulable parameters that reinforce theoretical derivations.</p>
+      </div>
+      <div class="labs-item">
+        <h4>🧫 Biology Microscopy</h4>
+        <p>Zoom into cell structures and genetic material using high-resolution virtual microscopes and interactive labeling.</p>
+      </div>
+      <div class="labs-item">
+        <h4>🧪 Chemistry Reactions</h4>
+        <p>Conduct titrations, calorimetry, and qualitative analysis virtually, observing molecular-level animations of reaction pathways.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Guided Academic Pathways</h2>
+    <p>Adaptive recommendation engines help students explore elective subjects, align coursework with career aspirations, and select streams for senior secondary studies. Integrated counseling modules provide aptitude assessments and career guidance.</p>
+  </div>
+
+  <div class="cta">
+    <h3>Accelerate Board-Exam Success</h3>
+    <p>Experience smart tools that turn rigorous curricula into engaging, personalized learning journeys.</p>
+    <a href="contact.html">Connect Now</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Smart Education Initiative | Empowering Secondary Students for Board-Exam Excellence</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Middle School (Classes 6-8) - Smart Education</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa; color: #333; line-height: 1.6;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      padding: 14px 30px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav .logo {
+      font-size: 1.4em; font-weight: bold; color: #fff;
+    }
+    nav .back-link {
+      color: #fff; text-decoration: none; padding: 8px 16px; 
+      border: 2px solid rgba(255,255,255,0.3); border-radius: 25px;
+      transition: all 0.3s;
+    }
+    nav .back-link:hover {
+      background: rgba(255,255,255,0.2); border-color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #64B5F6 0%, #42A5F5 50%, #1976D2 100%);
+      color: white; padding: 80px 20px; text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8em; margin-bottom: 15px;
+    }
+    .hero .grade-info {
+      font-size: 1.3em; margin-bottom: 10px; opacity: 0.9;
+    }
+    .hero .description {
+      font-size: 1.1em; max-width: 750px; margin: 0 auto;
+    }
+    
+    /* Content Sections */
+    .content {
+      max-width: 1200px; margin: 0 auto; padding: 50px 20px;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      color: #1976D2; font-size: 2em; margin-bottom: 25px;
+      border-bottom: 3px solid #42A5F5; padding-bottom: 10px;
+    }
+    .section p {
+      font-size: 1.1em; margin-bottom: 20px; text-align: justify;
+    }
+    
+    /* Subject Cards Grid */
+    .subjects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px; margin: 30px 0;
+    }
+    .subject-card {
+      background: white; padding: 25px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+      border-left: 5px solid;
+    }
+    .subject-card.science { border-left-color: #4CAF50; }
+    .subject-card.math { border-left-color: #FF9800; }
+    .subject-card.language { border-left-color: #9C27B0; }
+    .subject-card.social { border-left-color: #F44336; }
+    
+    .subject-card:hover {
+      transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    .subject-card h3 {
+      margin-bottom: 15px; font-size: 1.3em;
+    }
+    .subject-card.science h3 { color: #2E7D32; }
+    .subject-card.math h3 { color: #F57C00; }
+    .subject-card.language h3 { color: #7B1FA2; }
+    .subject-card.social h3 { color: #D32F2F; }
+    
+    .subject-card .icon {
+      font-size: 2.2em; margin-bottom: 15px; display: block;
+    }
+    
+    /* Smart Classroom Features */
+    .smart-classroom {
+      background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .smart-classroom h3 {
+      color: #2E7D32; margin-bottom: 25px; font-size: 1.8em; text-align: center;
+    }
+    .classroom-features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .classroom-feature {
+      background: white; padding: 20px; border-radius: 10px; 
+      border-top: 4px solid #4CAF50;
+    }
+    .classroom-feature h4 {
+      color: #2E7D32; margin-bottom: 10px; font-size: 1.2em;
+    }
+    
+    /* Cognitive Development */
+    .cognitive-section {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .cognitive-section h3 {
+      color: #E65100; margin-bottom: 25px; font-size: 1.8em; text-align: center;
+    }
+    .cognitive-skills {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .cognitive-skill {
+      background: white; padding: 20px; border-radius: 10px;
+      border-left: 4px solid #FF9800;
+    }
+    .cognitive-skill h4 {
+      color: #E65100; margin-bottom: 10px; font-size: 1.2em;
+    }
+    
+    /* App Integration */
+    .apps-section {
+      margin: 40px 0;
+    }
+    .apps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px; margin: 30px 0;
+    }
+    .app-card {
+      background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+      padding: 25px; border-radius: 12px; border-left: 5px solid #9C27B0;
+    }
+    .app-card h4 {
+      color: #7B1FA2; margin-bottom: 12px; font-size: 1.2em;
+    }
+    .app-card .category {
+      background: #9C27B0; color: white; padding: 4px 8px; 
+      border-radius: 15px; font-size: 0.8em; margin-bottom: 10px; display: inline-block;
+    }
+    
+    /* Age-Specific Benefits */
+    .benefits-age {
+      background: #f8f9fa; padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .benefits-age h3 {
+      text-align: center; color: #1976D2; margin-bottom: 30px; font-size: 1.8em;
+    }
+    .age-benefits {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .age-benefit {
+      background: white; padding: 25px; border-radius: 10px; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .age-benefit h4 {
+      color: #1976D2; margin-bottom: 15px; font-size: 1.3em;
+    }
+    .age-benefit .age-range {
+      background: #42A5F5; color: white; padding: 4px 12px;
+      border-radius: 20px; font-size: 0.9em; display: inline-block; margin-bottom: 15px;
+    }
+    
+    /* Statistics */
+    .stats-section {
+      background: linear-gradient(120deg, #1976D2, #1565C0);
+      color: white; padding: 50px; text-align: center; border-radius: 15px; margin: 40px 0;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; margin-top: 30px;
+    }
+    .stat-item h3 {
+      font-size: 2.5em; margin-bottom: 10px;
+    }
+    .stat-item p {
+      font-size: 1.1em; opacity: 0.9;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, #FF5722, #E64A19);
+      color: white; padding: 40px; text-align: center; border-radius: 15px; margin: 40px 0;
+    }
+    .cta h3 {
+      margin-bottom: 15px; font-size: 1.8em;
+    }
+    .cta-buttons {
+      margin-top: 20px;
+    }
+    .cta-button {
+      display: inline-block; background: white; color: #E64A19;
+      padding: 12px 30px; border-radius: 25px; text-decoration: none;
+      font-weight: bold; margin: 10px; transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background: #f0f0f0; transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #2E7D32; color: white; text-align: center;
+      padding: 30px 20px; margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2em; }
+      .section h2 { font-size: 1.6em; }
+      nav { flex-direction: column; text-align: center; }
+      .content { padding: 30px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Smart Education</div>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <h1>Middle School</h1>
+  <p class="grade-info">Classes 6-8 • Ages 11-13</p>
+  <p class="description">Subject-based learning and cognitive skill development. Smart classrooms and apps support science, math, languages and social studies.</p>
+</section>
+
+<div class="content">
+  
+  <div class="section">
+    <h2>The Critical Middle Years: Building Academic Excellence</h2>
+    <p>Middle school represents a <strong>pivotal transition</strong> where students move from elementary concepts to more complex, subject-specific learning. Ages 11-13 are characterized by rapid cognitive development, increased abstract thinking abilities, and growing independence in learning approaches.</p>
+    
+    <p>Smart education at this level leverages <strong>interactive technology and specialized apps</strong> to make challenging subjects more accessible and engaging. Research shows that middle school students who use educational technology demonstrate improved problem-solving skills, better retention of complex concepts, and increased motivation to learn.</p>
+  </div>
+
+  <div class="subjects-grid">
+    <div class="subject-card science">
+      <span class="icon">🔬</span>
+      <h3>Science & Lab Work</h3>
+      <p>Virtual laboratories, 3D molecular models, and simulation software allow students to conduct experiments safely while exploring physics, chemistry, and biology concepts through interactive investigations.</p>
+    </div>
+    
+    <div class="subject-card math">
+      <span class="icon">📊</span>
+      <h3>Mathematics & Problem Solving</h3>
+      <p>Adaptive math platforms provide personalized algebra, geometry, and statistics instruction with step-by-step guidance, visual representations, and real-world applications that make abstract concepts concrete.</p>
+    </div>
+    
+    <div class="subject-card language">
+      <span class="icon">📝</span>
+      <h3>Languages & Literature</h3>
+      <p>Interactive reading platforms, vocabulary builders, and collaborative writing tools enhance comprehension skills while supporting multiple languages and diverse literary genres through multimedia content.</p>
+    </div>
+    
+    <div class="subject-card social">
+      <span class="icon">🌍</span>
+      <h3>Social Studies & History</h3>
+      <p>Virtual museum tours, interactive maps, and historical simulations bring past events to life while teaching critical thinking, cultural awareness, and analytical skills through immersive experiences.</p>
+    </div>
+  </div>
+
+  <div class="smart-classroom">
+    <h3>Smart Classroom Technologies</h3>
+    <div class="classroom-features">
+      <div class="classroom-feature">
+        <h4>🖥️ Interactive Whiteboards</h4>
+        <p>Touch-enabled displays that allow collaborative problem-solving, visual presentations, and real-time interaction with digital content across all subjects.</p>
+      </div>
+      
+      <div class="classroom-feature">
+        <h4>📱 1:1 Device Programs</h4>
+        <p>Individual tablets or laptops for each student, enabling personalized learning experiences and digital portfolio development throughout middle school years.</p>
+      </div>
+      
+      <div class="classroom-feature">
+        <h4>🌐 Learning Management Systems</h4>
+        <p>Centralized platforms where students access assignments, submit work, receive feedback, and track progress across all subjects in one integrated environment.</p>
+      </div>
+      
+      <div class="classroom-feature">
+        <h4>🎥 Video Conferencing Tools</h4>
+        <p>Connect with experts, virtual field trips, and collaborative projects with students worldwide, expanding learning beyond classroom walls.</p>
+      </div>
+      
+      <div class="classroom-feature">
+        <h4>📊 Real-time Assessment</h4>
+        <p>Instant feedback systems that help teachers adjust instruction immediately and students monitor their own learning progress continuously.</p>
+      </div>
+      
+      <div class="classroom-feature">
+        <h4>🤖 AI Learning Assistants</h4>
+        <p>Chatbots and AI tutors that provide 24/7 homework help, answer questions, and offer additional practice in challenging subject areas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cognitive-section">
+    <h3>Cognitive Skill Development Through Technology</h3>
+    <div class="cognitive-skills">
+      <div class="cognitive-skill">
+        <h4>🧠 Critical Thinking</h4>
+        <p>Problem-based learning platforms that present real-world scenarios requiring analysis, evaluation, and synthesis of information from multiple sources.</p>
+      </div>
+      
+      <div class="cognitive-skill">
+        <h4>🔍 Research Skills</h4>
+        <p>Digital literacy programs teaching students how to find, evaluate, and cite reliable sources while creating multimedia presentations and reports.</p>
+      </div>
+      
+      <div class="cognitive-skill">
+        <h4>🤝 Collaboration</h4>
+        <p>Group projects using shared documents, peer review systems, and communication tools that build teamwork and communication skills.</p>
+      </div>
+      
+      <div class="cognitive-skill">
+        <h4>💡 Creative Problem Solving</h4>
+        <p>Design thinking workshops and maker space activities that encourage innovation, experimentation, and creative approaches to challenges.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="apps-section">
+    <h2>Subject-Specific Educational Apps</h2>
+    <div class="apps-grid">
+      
+      <div class="app-card">
+        <span class="category">Science</span>
+        <h4>Virtual Lab Experiments</h4>
+        <p>PhET simulations, Labster virtual labs, and augmented reality chemistry apps

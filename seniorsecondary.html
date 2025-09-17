@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Secondary (Classes 11-12) - Smart Education</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa; color: #333; line-height: 1.6;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      padding: 14px 30px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav .logo {
+      font-size: 1.4em; font-weight: bold; color: #fff;
+    }
+    nav .back-link {
+      color: #fff; text-decoration: none; padding: 8px 16px; 
+      border: 2px solid rgba(255,255,255,0.3); border-radius: 25px;
+      transition: all 0.3s;
+    }
+    nav .back-link:hover {
+      background: rgba(255,255,255,0.2); border-color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 50%, #673AB7 100%);
+      color: white; padding: 80px 20px; text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8em; margin-bottom: 15px;
+    }
+    .hero .grade-info {
+      font-size: 1.3em; margin-bottom: 10px; opacity: 0.9;
+    }
+    .hero .description {
+      font-size: 1.1em; max-width: 800px; margin: 0 auto;
+    }
+    
+    /* Content Sections */
+    .content {
+      max-width: 1200px; margin: 0 auto; padding: 50px 20px;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      color: #7B1FA2; font-size: 2em; margin-bottom: 25px;
+      border-bottom: 3px solid #9C27B0; padding-bottom: 10px;
+    }
+    .section p {
+      font-size: 1.1em; margin-bottom: 20px; text-align: justify;
+    }
+    
+    /* Stream Selection Cards */
+    .streams-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px; margin: 30px 0;
+    }
+    .stream-card {
+      background: white; padding: 30px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+      border-top: 6px solid;
+    }
+    .stream-card.science { border-top-color: #4CAF50; }
+    .stream-card.commerce { border-top-color: #FF9800; }
+    .stream-card.humanities { border-top-color: #2196F3; }
+    
+    .stream-card:hover {
+      transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .stream-card h3 {
+      margin-bottom: 15px; font-size: 1.4em;
+    }
+    .stream-card.science h3 { color: #2E7D32; }
+    .stream-card.commerce h3 { color: #F57C00; }
+    .stream-card.humanities h3 { color: #1976D2; }
+    
+    .stream-card .icon {
+      font-size: 2.5em; margin-bottom: 15px; display: block;
+    }
+    .stream-card .subjects {
+      background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 15px;
+    }
+    .stream-card .subjects h4 {
+      font-size: 1em; margin-bottom: 8px; color: #666;
+    }
+    .stream-card .subjects ul {
+      list-style: none; padding: 0;
+    }
+    .stream-card .subjects li {
+      padding: 3px 0; font-size: 0.95em;
+    }
+    .stream-card .subjects li:before {
+      content: "✓ "; color: #4CAF50; font-weight: bold;
+    }
+    
+    /* Digital Learning Tools */
+    .digital-tools {
+      background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .digital-tools h3 {
+      color: #2E7D32; margin-bottom: 25px; font-size: 1.8em; text-align: center;
+    }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .tool-item {
+      background: white; padding: 20px; border-radius: 10px; 
+      border-left: 4px solid #4CAF50;
+    }
+    .tool-item h4 {
+      color: #2E7D32; margin-bottom: 10px; font-size: 1.2em;
+    }
+    
+    /* Assessment & Preparation */
+    .assessment-section {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .assessment-section h3 {
+      color: #E65100; margin-bottom: 25px; font-size: 1.8em; text-align: center;
+    }
+    .assessment-features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .assessment-feature {
+      background: white; padding: 20px; border-radius: 10px;
+      border-left: 4px solid #FF9800;
+    }
+    .assessment-feature h4 {
+      color: #E65100; margin-bottom: 10px; font-size: 1.2em;
+    }
+    
+    /* Higher Education Preparation */
+    .higher-ed-prep {
+      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .higher-ed-prep h3 {
+      color: #1976D2; margin-bottom: 25px; font-size: 1.8em; text-align: center;
+    }
+    .prep-timeline {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .timeline-item {
+      background: white; padding: 25px; border-radius: 10px;
+      border-left: 5px solid #2196F3; display: flex; gap: 15px; align-items: flex-start;
+    }
+    .timeline-icon {
+      background: #2196F3; color: white; padding: 10px; border-radius: 50%;
+      font-size: 1.2em; min-width: 45px; height: 45px; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .timeline-content h4 {
+      color: #1976D2; margin-bottom: 8px; font-size: 1.2em;
+    }
+    
+    /* Career Guidance */
+    .career-section {
+      margin: 40px 0;
+    }
+    .career-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px; margin: 30px 0;
+    }
+    .career-card {
+      background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+      padding: 25px; border-radius: 12px; border-left: 5px solid #9C27B0;
+    }
+    .career-card h4 {
+      color: #7B1FA2; margin-bottom: 12px; font-size: 1.2em;
+    }
+    .career-card .stream-tag {
+      background: #9C27B0; color: white; padding: 4px 8px; 
+      border-radius: 15px; font-size: 0.8em; margin-bottom: 10px; display: inline-block;
+    }
+    
+    /* Statistics */
+    .stats-section {
+      background: linear-gradient(120deg, #7B1FA2, #6A1B9A);
+      color: white; padding: 50px; text-align: center; border-radius: 15px; margin: 40px 0;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; margin-top: 30px;
+    }
+    .stat-item h3 {
+      font-size: 2.5em; margin-bottom: 10px;
+    }
+    .stat-item p {
+      font-size: 1.1em; opacity: 0.9;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, #FF5722, #E64A19);
+      color: white; padding: 40px; text-align: center; border-radius: 15px; margin: 40px 0;
+    }
+    .cta h3 {
+      margin-bottom: 15px; font-size: 1.8em;
+    }
+    .cta-buttons {
+      margin-top: 20px;
+    }
+    .cta-button {
+      display: inline-block; background: white; color: #E64A19;
+      padding: 12px 30px; border-radius: 25px; text-decoration: none;
+      font-weight: bold; margin: 10px; transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background: #f0f0f0; transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #2E7D32; color: white; text-align: center;
+      padding: 30px 20px; margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2em; }
+      .section h2 { font-size: 1.6em; }
+      nav { flex-direction: column; text-align: center; }
+      .content { padding: 30px 15px; }
+      .timeline-item { flex-direction: column; text-align: center; }
+      .timeline-icon { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Smart Education</div>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <h1>Senior Secondary</h1>
+  <p class="grade-info">Classes 11-12 • Ages 16-17</p>
+  <p class="description">Academic stream selection (Science, Commerce, Humanities). Digital research, webinars, and online assessments aid preparation for higher education.</p>
+</section>
+
+<div class="content">
+  
+  <div class="section">
+    <h2>Critical Decision Point: Choosing Your Academic Path</h2>
+    <p>Senior secondary education represents the <strong>most crucial phase</strong> in a student's academic journey. Classes 11-12 require students to choose specialized streams that will shape their future career prospects and higher education opportunities.</p>
+    
+    <p>Smart education at this level provides <strong>comprehensive support</strong> through digital research tools, expert webinars, personalized assessments, and data-driven guidance to help students make informed decisions about their academic and professional future.</p>
+  </div>
+
+  <div class="streams-grid">
+    <div class="stream-card science">
+      <span class="icon">🔬</span>
+      <h3>Science Stream</h3>
+      <p>For students aspiring to careers in medicine, engineering, research, and technology. Emphasizes analytical thinking, problem-solving, and scientific methodology.</p>
+      <div class="subjects">
+        <h4>Core Subjects:</h4>
+        <ul>
+          <li>Physics</li>
+          <li>Chemistry</li>
+          <li>Mathematics</li>
+          <li>Biology (Medical) / Computer Science (Non-Medical)</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="stream-card commerce">
+      <span class="icon">💼</span>
+      <h3>Commerce Stream</h3>
+      <p>Perfect for future business leaders, entrepreneurs, and finance professionals. Develops business acumen, financial literacy, and economic understanding.</p>
+      <div class="subjects">
+        <h4>Core Subjects:</h4>
+        <ul>
+          <li>Accountancy</li>
+          <li>Business Studies</li>
+          <li>Economics</li>
+          <li>Mathematics / Applied Mathematics</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="stream-card humanities">
+      <span class="icon">📚</span>
+      <h3>Arts/Humanities Stream</h3>
+      <p>Ideal for students interested in social sciences, literature, psychology, and public service. Develops critical thinking and communication skills.</p>
+      <div class="subjects">
+        <h4>Core Subjects:</h4>
+        <ul>
+          <li>History</li>
+          <li>Political Science</li>
+          <li>Geography</li>
+          <li>Psychology / Sociology</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="digital-tools">
+    <h3>Digital Learning Technologies</h3>
+    <div class="tools-grid">
+      <div class="tool-item">
+        <h4>🔍 Advanced Research Platforms</h4>
+        <p>Access to academic databases, research journals, and digital libraries for in-depth subject exploration and project work.</p>
+      </div>
+      
+      <div class="tool-item">
+        <h4>🎥 Expert Webinars & Masterclasses</h4>
+        <p>Live sessions with subject experts, university professors, and industry professionals providing insights and guidance.</p>
+      </div>
+      
+      <div class="tool-item">
+        <h4>📊 Personalized Analytics</h4>
+        <p>AI-powered learning analytics that track progress, identify strengths/weaknesses, and recommend personalized study strategies.</p>
+      </div>
+      
+      <div class="tool-item">
+        <h4>🌐 Virtual Classrooms</h4>
+        <p>Interactive online learning environments with real-time collaboration, screen sharing, and recorded sessions for revision.</p>
+      </div>
+      
+      <div class="tool-item">
+        <h4>📱 Mobile Learning Apps</h4>
+        <p>Subject-specific apps for on-the-go learning, practice tests, and quick revision during commute or breaks.</p>
+      </div>
+      
+      <div class="tool-item">
+        <h4>🤖 AI Tutoring Systems</h4>
+        <p>24/7 available AI tutors that provide instant help with homework, doubt clearing, and concept explanation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="assessment-section">
+    <h3>Smart Assessment & Exam Preparation</h3>
+    <div class="assessment-features">
+      <div class="assessment-feature">
+        <h4>📝 Online Mock Tests</h4>
+        <p>Comprehensive practice tests that simulate actual board exam conditions with instant scoring and detailed analysis.</p>
+      </div>
+      
+      <div class="assessment-feature">
+        <h4>🎯 Adaptive Testing</h4>
+        <p>Tests that adjust difficulty based on student performance, ensuring optimal challenge level and skill development.</p>
+      </div>
+      
+      <div class="assessment-feature">
+        <h4>📈 Progress Tracking</h4>
+        <p>Real-time dashboards showing improvement trends, weak areas, and comparison with peer performance.</p>
+      </div>
+      
+      <div class="assessment-feature">
+        <h4>⏰ Time Management Training</h4>
+        <p>Specialized modules teaching effective exam strategies, time allocation, and stress management techniques.</p>
+      </div>
+      
+      <div class="assessment-feature">
+        <h4>🔄 Instant Feedback</h4>
+        <p>Immediate detailed explanations for incorrect answers with links to relevant study materials and concepts.</p>
+      </div>
+      
+      <div class="assessment-feature">
+        <h4>📋 Performance Reports</h4>
+        <p>Comprehensive reports for students, parents, and teachers with actionable insights and improvement recommendations.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="higher-ed-prep">
+    <h3>Higher Education Preparation Timeline</h3>
+    <div class="prep-timeline">
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">📖</div>
+        <div class="timeline-content">
+          <h4>Class 11: Foundation Building</h4>
+          <p>Focus on understanding core concepts, building study habits, and exploring career options through aptitude assessments and counseling sessions.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">🎯</div>
+        <div class="timeline-content">
+          <h4>Mid-Class 12: Competitive Exam Prep</h4>
+          <p>Intensive preparation for entrance exams like JEE, NEET, CLAT, or other competitive tests with specialized coaching and practice.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">🎓</div>
+        <div class="timeline-content">
+          <h4>Board Exam Excellence</h4>
+          <p>Comprehensive board exam preparation with mock tests, revision strategies, and stress management techniques for optimal performance.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">🏛️</div>
+        <div class="timeline-content">
+          <h4>College Application Support</h4>
+          <p>Guidance on college selection, application processes, scholarship opportunities, and interview preparation for desired institutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-section">
+    <h2>Career Pathways by Stream</h2>
+    <div class="career-grid">
+      
+      <div class="career-card">
+        <span class="stream-tag">Science</span>
+        <h4>Engineering & Technology</h4>
+        <p>Software development, mechanical engineering, biotechnology, aerospace, and emerging fields like AI and robotics.</p>
+      </div>
+      
+      <div class="career-card">
+        <span class="stream-tag">Science</span>
+        <h4>Medical & Healthcare</h4>
+        <p>Medicine, dentistry, pharmacy, nursing, physiotherapy, and allied health sciences with growing opportunities.</p>
+      </div>
+      
+      <div class="career-card">
+        <span class="stream-tag">Commerce</span>
+        <h4>Business & Finance</h4>
+        <p>Investment banking, chartered accountancy, company secretary, financial analysis, and entrepreneurship opportunities.</p>
+      </div>
+      
+      <div class="career-card">
+        <span class="stream-tag">Commerce</span>
+        <h4>Management & Consulting</h4>
+        <p>MBA programs, business consulting, project management, and leadership roles in corporate sectors.</p>
+      </div>
+      
+      <div class="career-card">
+        <span class="stream-tag">Humanities</span>
+        <h4>Social Sciences & Research</h4>
+        <p>Psychology, sociology, anthropology, political science research, and academic careers in universities.</p>
+      </div>
+      
+      <div class="career-card">
+        <span class="stream-tag">Humanities</span>
+        <h4>Creative & Communication</h4>
+        <p>Journalism, content creation, advertising, public relations, and digital media with expanding opportunities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <h3>Senior Secondary Success Metrics</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>94%</h3>
+        <p>of students report improved exam confidence with smart preparation tools</p>
+      </div>
+      <div class="stat-item">
+        <h3>78%</h3>
+        <p>increase in competitive exam success rates through digital coaching</p>
+      </div>
+      <div class="stat-item">
+        <h3>89%</h3>
+        <p>of students make informed stream choices with AI-powered career guidance</p>
+      </div>
+      <div class="stat-item">
+        <h3>65%</h3>
+        <p>improvement in research and analytical skills through digital tools</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Preparing for University Success</h2>
+    <p>Senior secondary smart education goes beyond traditional classroom learning to develop <strong>critical life skills</strong> essential for university success. Students learn independent research methods, digital collaboration, time management, and self-directed learning approaches.</p>
+    
+    <p>The integration of webinars, online assessments, and digital research tools ensures that students are not just academically prepared but also <strong>technologically proficient</strong> and ready to excel in higher education environments that increasingly rely on digital platforms and tools.</p>
+  </div>
+
+  <div class="cta">
+    <h3>Ready to Excel in Senior Secondary?</h3>
+    <p>Unlock your potential with smart education tools designed for Classes 11-12 success and higher education preparation.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="cta-button">Get Started</a>
+      <a href="counseling.html" class="cta-button">Career Counseling</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Smart Education Initiative | Empowering Senior Secondary Students for Future Success</p>
+</footer>
+
+</body>
+</html>

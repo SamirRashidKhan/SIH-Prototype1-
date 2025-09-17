@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Education - Learning in the Digital Age</title>
+  <link rel="icon" type="image/x-icon" href="logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa; color: #333;
+    }
+    nav {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      padding: 14px 30px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo {
+      font-size: 1.4em; font-weight: bold; color: #fff;
+    }
+    nav ul {
+      list-style: none; display: flex; gap: 18px;
+    }
+    nav ul li a {
+      color: #fff; text-decoration: none; padding: 7px 14px; border-radius: 20px;
+      transition: background 0.2s;
+    }
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.18);
+    }
+    header {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      color: white; padding: 60px 20px; text-align: center;
+    }
+    header h1 {
+      font-size: 3em; margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 40px 20px; max-width: 1200px; margin: auto;
+    }
+    .section-title {
+      text-align: center; font-size: 2em; margin-bottom: 40px; color: #2E7D32;
+    }
+    .levels-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+    }
+    .card {
+      background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+      padding: 22px; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    }
+    .card h3 { color: #388E3C; margin-bottom: 12px; }
+    .card small { display: block; color: #888; margin-bottom: 10px; }
+    .card p { line-height: 1.6; }
+    .card a {
+      margin-top: 10px; display: inline-block; color: #2196F3; text-decoration: underline;
+      font-size: 0.95em;
+    }
+    footer {
+      background-color: #2E7D32; color: white; text-align: center; padding: 22px; font-size: 0.98em; margin-top: 60px;
+    }
+    @media (max-width: 650px) {
+      nav { flex-direction: column; }
+      .section-title { font-size: 1.3em; }
+      header h1 { font-size: 2em; }
+      section { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img
+      src="logo.png"
+      alt="Smart Education Logo"
+      class="logo"
+    />
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li><br><br><br>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Smart Education</h1>
+  <p>Learning in the Digital Age – Effective, Efficient, Flexible, and Comfortable</p>
+</header>
+
+<section>
+  <h2 class="section-title">Student Years & Levels</h2>
+  <div class="levels-grid">
+    <div class="card">
+      <h3>Foundation (Pre-primary)</h3>
+      <small>Play School, Ages 3-6</small>
+      <p>Early exploration, basic communication and play-based learning using digital games and smart devices.</p>
+      <a href="foundation.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Preparatory (Primary Years)</h3>
+      <small>Classes 1-5, Ages 6-10</small>
+      <p>Develops reading, writing, arithmetic and introductory digital literacy. Tablets and interactive learning enhance engagement.</p>
+      <a href="primary.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Middle School</h3>
+      <small>Classes 6-8, Ages 11-13</small>
+      <p>Subject-based learning and cognitive skill development. Smart classrooms and apps support science, math, languages and social studies.</p>
+      <a href="middle.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Secondary School</h3>
+      <small>Classes 9-10, Ages 14-15</small>
+      <p>Foundation for board exams and academic selection. Virtual labs, online classrooms and tailored learning paths for deeper understanding.</p>
+      <a href="secondary.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Senior Secondary</h3>
+      <small>Classes 11-12, Ages 16-17</small>
+      <p>Academic stream selection (Science, Commerce, Humanities). Digital research, webinars, and online assessments aid preparation for higher education.</p>
+      <a href="seniorsecondary.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Higher Education</h3>
+      <small>Bachelor/Professional Degrees</small>
+      <p>Universities and colleges provide digital platforms, MOOCs, and AI guidance for global-access learning and collaborative research.</p>
+      <a href="higher.html">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Postgraduate & Professional</h3>
+      <small>Master’s/Doctorate/Training</small>
+      <p>Specialized programs, research, and career-focused upskilling using advanced simulations, remote training and digital resources.</p>
+      <a href="postgraduate.html">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+    <br>
+  &copy; 2025 Smart Education Initiative | Empowering Learners in the Digital World
+  <br><br><br>
+   SAMIR KHAN
+   <br><br>
+</footer>
+
+</body>
+</html>
+

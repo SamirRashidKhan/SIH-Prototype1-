@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundation (Pre-primary) - Smart Education</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa; color: #333; line-height: 1.6;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      padding: 14px 30px; display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo {
+      font-size: 1.4em; font-weight: bold; color: #fff;
+    }
+    nav .back-link {
+      color: #fff; text-decoration: none; padding: 8px 16px; 
+      border: 2px solid rgba(255,255,255,0.3); border-radius: 25px;
+      transition: all 0.3s;
+    }
+    nav .back-link:hover {
+      background: rgba(255,255,255,0.2); border-color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #81C784 0%, #4CAF50 50%, #2E7D32 100%);
+      color: white; padding: 80px 20px; text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8em; margin-bottom: 15px;
+    }
+    .hero .age-range {
+      font-size: 1.3em; margin-bottom: 10px; opacity: 0.9;
+    }
+    .hero .description {
+      font-size: 1.1em; max-width: 600px; margin: 0 auto;
+    }
+    
+    /* Content Sections */
+    .content {
+      max-width: 1100px; margin: 0 auto; padding: 50px 20px;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      color: #2E7D32; font-size: 2em; margin-bottom: 25px;
+      border-bottom: 3px solid #4CAF50; padding-bottom: 10px;
+    }
+    .section p {
+      font-size: 1.1em; margin-bottom: 20px; text-align: justify;
+    }
+    
+    /* Feature Grid */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px; margin: 30px 0;
+    }
+    .feature-card {
+      background: white; padding: 25px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card h3 {
+      color: #388E3C; margin-bottom: 15px; font-size: 1.3em;
+    }
+    .feature-card .icon {
+      font-size: 2em; margin-bottom: 15px; display: block;
+    }
+    
+    /* Learning Activities */
+    .activities {
+      background: #E8F5E8; padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .activities h3 {
+      color: #2E7D32; margin-bottom: 20px; font-size: 1.5em; text-align: center;
+    }
+    .activity-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .activity-item {
+      background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #4CAF50;
+    }
+    .activity-item h4 {
+      color: #2E7D32; margin-bottom: 8px;
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+      padding: 40px; border-radius: 15px; margin: 40px 0;
+    }
+    .benefits h3 {
+      text-align: center; color: #2E7D32; margin-bottom: 30px; font-size: 1.8em;
+    }
+    .benefit-item {
+      display: flex; align-items: flex-start; margin: 20px 0; padding: 15px;
+      background: rgba(255,255,255,0.7); border-radius: 10px;
+    }
+    .benefit-item .check {
+      color: #4CAF50; font-size: 1.3em; margin-right: 15px;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      color: white; padding: 40px; text-align: center; border-radius: 15px;
+      margin: 40px 0;
+    }
+    .cta h3 {
+      margin-bottom: 15px; font-size: 1.6em;
+    }
+    .cta-button {
+      display: inline-block; background: white; color: #2E7D32;
+      padding: 12px 30px; border-radius: 25px; text-decoration: none;
+      font-weight: bold; margin-top: 15px; transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background: #f0f0f0; transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #2E7D32; color: white; text-align: center;
+      padding: 30px 20px; margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2em; }
+      .section h2 { font-size: 1.6em; }
+      nav { flex-direction: column; text-align: center; }
+      .content { padding: 30px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Smart Education</div>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <h1>Foundation (Pre-primary)</h1>
+  <p class="age-range">Play School • Ages 3-6</p>
+  <p class="description">Early exploration, basic communication and play-based learning using digital games and smart devices</p>
+</section>
+
+<div class="content">
+  
+  <div class="section">
+    <h2>The Foundation Stage: Building Tomorrow's Learners</h2>
+    <p>The foundation stage, covering ages 3-6, represents the most crucial period in a child's educational journey. During these formative years, <strong>90% of brain development occurs</strong>, making it the optimal window for introducing smart education technologies that enhance natural learning processes[web:55][web:61].</p>
+    
+    <p>Smart education at this level focuses on <strong>play-based learning</strong> that integrates digital tools seamlessly with traditional developmental activities. Children engage with age-appropriate technology that supports their natural curiosity while building essential cognitive, social, and emotional skills[web:56][web:57].</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="icon">🎮</span>
+      <h3>Digital Game-Based Learning</h3>
+      <p>Interactive educational games that develop problem-solving skills, memory, and attention span through engaging gameplay tailored for young minds[web:56][web:59].</p>
+    </div>
+    
+    <div class="feature-card">
+      <span class="icon">📱</span>
+      <h3>Smart Device Integration</h3>
+      <p>Age-appropriate tablets and touchscreen devices that provide intuitive interfaces for exploration, creativity, and foundational learning[web:63][web:66].</p>
+    </div>
+    
+    <div class="feature-card">
+      <span class="icon">🎨</span>
+      <h3>Creative Expression</h3>
+      <p>Digital art tools, storytelling apps, and multimedia creation platforms that nurture imagination and artistic development[web:60][web:66].</p>
+    </div>
+    
+    <div class="feature-card">
+      <span class="icon">🤝</span>
+      <h3>Social Learning</h3>
+      <p>Collaborative digital activities that promote communication, cooperation, and peer interaction in safe, guided environments[web:57][web:60].</p>
+    </div>
+  </div>
+
+  <div class="activities">
+    <h3>Smart Learning Activities for Ages 3-6</h3>
+    <div class="activity-list">
+      <div class="activity-item">
+        <h4>🔤 Interactive Letter Games</h4>
+        <p>Touch-based alphabet recognition and phonics activities using animated characters and sounds[web:55][web:61].</p>
+      </div>
+      
+      <div class="activity-item">
+        <h4>🔢 Number Exploration</h4>
+        <p>Counting games, pattern recognition, and basic math concepts through colorful, engaging digital manipulatives[web:56].</p>
+      </div>
+      
+      <div class="activity-item">
+        <h4>🎭 Digital Storytelling</h4>
+        <p>Creating and sharing stories using multimedia tools that combine voice, images, and simple animations[web:60][web:63].</p>
+      </div>
+      
+      <div class="activity-item">
+        <h4>🧩 Problem-Solving Puzzles</h4>
+        <p>Age-appropriate logic games and spatial reasoning challenges that adapt to individual learning pace[web:56][web:57].</p>
+      </div>
+      
+      <div class="activity-item">
+        <h4>🌍 Virtual Exploration</h4>
+        <p>Safe digital environments for exploring nature, animals, and different cultures through immersive experiences[web:63].</p>
+      </div>
+      
+      <div class="activity-item">
+        <h4>🎵 Musical Learning</h4>
+        <p>Interactive rhythm games, instrument exploration, and creative music-making activities[web:60][web:66].</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits">
+    <h3>Benefits of Smart Education in Foundation Years</h3>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Enhanced Cognitive Development:</strong> Digital games improve problem-solving skills, memory, and attention span while making learning enjoyable and engaging[web:56][web:59].
+      </div>
+    </div>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Personalized Learning Pace:</strong> Smart technologies adapt to individual learning speeds, ensuring no child is left behind or held back[web:63][web:66].
+      </div>
+    </div>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Improved Motor Skills:</strong> Touchscreen interactions and digital drawing tools enhance fine motor development and hand-eye coordination[web:57][web:60].
+      </div>
+    </div>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Language Development:</strong> Interactive storytelling and vocabulary games accelerate communication skills and language acquisition[web:55][web:57].
+      </div>
+    </div>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Social-Emotional Learning:</strong> Cooperative digital activities teach sharing, empathy, and emotional regulation in guided settings[web:56][web:60].
+      </div>
+    </div>
+    
+    <div class="benefit-item">
+      <span class="check">✓</span>
+      <div>
+        <strong>Future Readiness:</strong> Early exposure to technology builds digital literacy skills essential for 21st-century learning and success[web:66][web:70].
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Safe and Appropriate Technology Use</h2>
+    <p>Smart education for foundation-level learners emphasizes <strong>developmentally appropriate practices</strong> that balance screen time with hands-on activities. All digital tools are carefully selected to ensure they promote active engagement rather than passive consumption[web:63][web:70].</p>
+    
+    <p>Teachers and parents work together to create <strong>structured digital experiences</strong> that support rather than replace traditional play and exploration. The focus remains on using technology as a tool to enhance natural learning processes while maintaining the joy and wonder of childhood discovery[web:57][web:66].</p>
+  </div>
+
+  <div class="cta">
+    <h3>Ready to Explore Foundation Learning?</h3>
+    <p>Discover how smart education can transform your child's early learning experience through play-based digital activities.</p>
+    <a href="contact.html" class="cta-button">Get Started Today</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Smart Education Initiative | Nurturing Young Minds Through Technology</p>
+</footer>
+
+</body>
+</html>

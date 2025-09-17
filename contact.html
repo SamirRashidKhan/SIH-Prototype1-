@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Smart Education</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa; color: #333; line-height: 1.6;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(120deg, #4CAF50, #2E7D32);
+      padding: 14px 30px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav .logo {
+      font-size: 1.4em; font-weight: bold; color: #fff;
+    }
+    nav .nav-menu {
+      display: flex; gap: 20px;
+    }
+    nav .nav-menu a {
+      color: #fff; text-decoration: none; padding: 8px 16px; 
+      border-radius: 20px; transition: all 0.3s;
+    }
+    nav .nav-menu a:hover, nav .nav-menu a.active {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 50%, #1B5E20 100%);
+      color: white; padding: 80px 20px; text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em; margin-bottom: 15px;
+    }
+    .hero .tagline {
+      font-size: 1.2em; max-width: 700px; margin: 0 auto; opacity: 0.95;
+    }
+    
+    /* Content Container */
+    .content {
+      max-width: 1200px; margin: 0 auto; padding: 60px 20px;
+    }
+    
+    /* Contact Info Section */
+    .contact-info-section {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px; margin-bottom: 60px;
+    }
+    .contact-card {
+      background: white; padding: 35px; border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1); text-align: center;
+      transition: transform 0.3s; border-top: 5px solid;
+    }
+    .contact-card.phone { border-top-color: #4CAF50; }
+    .contact-card.email { border-top-color: #2196F3; }
+    .contact-card.location { border-top-color: #FF9800; }
+    .contact-card.hours { border-top-color: #9C27B0; }
+    
+    .contact-card:hover {
+      transform: translateY(-8px);
+    }
+    .contact-card .icon {
+      font-size: 3em; margin-bottom: 20px; display: block;
+    }
+    .contact-card.phone .icon { color: #4CAF50; }
+    .contact-card.email .icon { color: #2196F3; }
+    .contact-card.location .icon { color: #FF9800; }
+    .contact-card.hours .icon { color: #9C27B0; }
+    
+    .contact-card h3 {
+      margin-bottom: 15px; font-size: 1.4em;
+    }
+    .contact-card.phone h3 { color: #2E7D32; }
+    .contact-card.email h3 { color: #1976D2; }
+    .contact-card.location h3 { color: #F57C00; }
+    .contact-card.hours h3 { color: #7B1FA2; }
+    
+    .contact-card p {
+      font-size: 1.1em; margin-bottom: 10px;
+    }
+    .contact-card a {
+      color: inherit; text-decoration: none;
+    }
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Main Contact Section */
+    .main-contact {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin: 60px 0;
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      background: white; padding: 40px; border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .contact-form h2 {
+      color: #2E7D32; font-size: 2em; margin-bottom: 30px; text-align: center;
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-group label {
+      display: block; margin-bottom: 8px; font-weight: 600; color: #2E7D32;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0;
+      border-radius: 8px; font-size: 1em; transition: all 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: #4CAF50; box-shadow: 0 0 0 3px rgba(76,175,80,0.1);
+    }
+    .form-group textarea {
+      resize: vertical; min-height: 120px;
+    }
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+    }
+    .submit-btn {
+      background: linear-gradient(45deg, #4CAF50, #45a049); color: white;
+      padding: 15px 40px; border: none; border-radius: 30px; cursor: pointer;
+      font-size: 1.1em; font-weight: bold; transition: all 0.3s; width: 100%;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px); box-shadow: 0 5px 15px rgba(76,175,80,0.4);
+    }
+    
+    /* Quick Contact */
+    .quick-contact {
+      background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+      padding: 40px; border-radius: 15px;
+    }
+    .quick-contact h2 {
+      color: #2E7D32; font-size: 2em; margin-bottom: 30px; text-align: center;
+    }
+    .quick-contact-item {
+      background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px;
+      border-left: 5px solid #4CAF50; display: flex; align-items: center; gap: 20px;
+    }
+    .quick-contact-icon {
+      font-size: 2em; color: #4CAF50;
+    }
+    .quick-contact-info h4 {
+      color: #2E7D32; margin-bottom: 5px;
+    }
+    .quick-contact-info p {
+      color: #666; margin: 0;
+    }
+    .quick-contact-info a {
+      color: #4CAF50; text-decoration: none;
+    }
+    .quick-contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Office Locations */
+    .locations-section {
+      margin: 60px 0;
+    }
+    .locations-section h2 {
+      color: #2E7D32; font-size: 2.2em; text-align: center; margin-bottom: 40px;
+    }
+    .locations-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    .location-card {
+      background: white; padding: 30px; border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+    }
+    .location-card:hover {
+      transform: translateY(-5px);
+    }
+    .location-header {
+      display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+    }
+    .location-flag {
+      font-size: 2em;
+    }
+    .location-card h3 {
+      color: #2E7D32; font-size: 1.4em; margin: 0;
+    }
+    .location-card .address {
+      color: #666; margin-bottom: 15px; line-height: 1.8;
+    }
+    .location-card .contact-details {
+      border-top: 1px solid #eee; padding-top: 15px;
+    }
+    .location-card .contact-details p {
+      margin: 5px 0; color: #555;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+      padding: 50px; border-radius: 20px; margin: 60px 0;
+    }
+    .faq-section h2 {
+      color: #1976D2; font-size: 2.2em; text-align: center; margin-bottom: 40px;
+    }
+    .faq-item {
+      background: white; margin-bottom: 15px; border-radius: 10px; overflow: hidden;
+    }
+    .faq-question {
+      background: #f5f5f5; padding: 20px; cursor: pointer; font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      color: #1976D2; transition: all 0.3s;
+    }
+    .faq-question:hover {
+      background: #e3f2fd;
+    }
+    .faq-question::after {
+      content: '+'; font-size: 1.5em; transition: transform 0.3s;
+    }
+    .faq-question.active::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s;
+    }
+    .faq-answer.active {
+      padding: 20px; max-height: 200px;
+    }
+    
+    /* Social Media */
+    .social-section {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+      padding: 50px; border-radius: 20px; margin: 60px 0; text-align: center;
+    }
+    .social-section h2 {
+      color: #E65100; font-size: 2.2em; margin-bottom: 30px;
+    }
+    .social-section p {
+      font-size: 1.1em; margin-bottom: 30px; color: #666;
+    }
+    .social-icons {
+      display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;
+    }
+    .social-icon {
+      width: 70px; height: 70px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; text-decoration: none;
+      transition: all 0.3s; color: white; font-size: 1.8em;
+    }
+    .social-icon.instagram {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C);
+    }
+    .social-icon.youtube {
+      background: #FF0000;
+    }
+    .social-icon.twitter {
+      background: #1DA1F2;
+    }
+    .social-icon.linkedin {
+      background: #0077B5;
+    }
+    .social-icon.facebook {
+      background: #1877F2;
+    }
+    .social-icon:hover {
+      transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #FF5722, #E64A19);
+      color: white; padding: 50px; text-align: center; border-radius: 20px; margin: 60px 0;
+    }
+    .cta-section h3 {
+      font-size: 2em; margin-bottom: 15px;
+    }
+    .cta-section p {
+      font-size: 1.1em; margin-bottom: 25px; opacity: 0.95;
+    }
+    .cta-buttons {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    }
+    .cta-button {
+      display: inline-block; background: white; color: #E64A19;
+      padding: 12px 30px; border-radius: 25px; text-decoration: none;
+      font-weight: bold; transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background: #f0f0f0; transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #2E7D32; color: white; text-align: center;
+      padding: 40px 20px; margin-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5em; }
+      nav { flex-direction: column; text-align: center; }
+      .nav-menu { margin-top: 10px; }
+      .content { padding: 40px 15px; }
+      .main-contact { grid-template-columns: 1fr; gap: 30px; }
+      .form-row { grid-template-columns: 1fr; }
+      .social-icons { gap: 15px; }
+      .social-icon { width: 60px; height: 60px; font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Smart Education</div>
+  <div class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p class="tagline">Get in touch with our team to learn more about Smart Education and how we can help transform your learning experience</p>
+</section>
+
+<div class="content">
+  
+  <!-- Contact Info Cards -->
+  <div class="contact-info-section">
+    <div class="contact-card phone">
+      <span class="icon">📞</span>
+      <h3>Call Us</h3>
+      <p><a href="tel:+919876543210">+91 70 4520 0510</a></p>
+      <p><a href="tel:+912024567890">+91 70 4520 0510</a></p>
+      <p>Mon-Fri: 9:00 AM - 6:00 PM IST</p>
+    </div>
+    
+    <div class="contact-card email">
+      <span class="icon">✉️</span>
+      <h3>Email Us</h3>
+      <p><a href="mailto:info@smarteducation.com">info@smarteducation.com</a></p>
+      <p><a href="mailto:support@smarteducation.com">support@smarteducation.com</a></p>
+      <p>We respond within 24 hours</p>
+    </div>
+    
+    <div class="contact-card location">
+      <span class="icon">📍</span>
+      <h3>Visit Us</h3>
+      <p>Smart Education Campus</p>
+      <p>Poman, Maharashtra 412108</p>
+      <p>India</p>
+    </div>
+    
+    <div style="width: 316%; margin: 4 auto;" class="contact-card hours" >
+      <span class="icon">🕒</span>
+      <h3>Office Hours</h3>
+      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+      <p>Saturday: 10:00 AM - 4:00 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </div>
+
+  <!-- Main Contact Section -->
+  <div class="main-contact">
+    
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm" action="#" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="interest">Area of Interest</label>
+          <select id="interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="foundation">Foundation (Pre-primary)</option>
+            <option value="primary">Preparatory (Primary Years)</option>
+            <option value="middle">Middle School</option>
+            <option value="secondary">Secondary School</option>
+            <option value="senior">Senior Secondary</option>
+            <option value="higher">Higher Education</option>
+            <option value="postgraduate">Postgraduate & Professional</option>
+            <option value="corporate">Corporate Training</option>
+            <option value="partnership">Partnership Opportunities</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" placeholder="Brief subject of your inquiry" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Tell us more about your inquiry or how we can help you..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    
+    <!-- Quick Contact -->
+    <div class="quick-contact">
+      <h2>Quick Contact</h2>
+      
+      <div class="quick-contact-item">
+        <div class="quick-contact-icon">🎓</div>
+        <div class="quick-contact-info">
+          <h4>Admissions Inquiry</h4>
+          <p>Learn about our programs</p>
+          <p><a href="mailto:admissions@smarteducation.com">admissions@smarteducation.com</a></p>
+        </div>
+      </div>
+      
+      <div class="quick-contact-item">
+        <div class="quick-contact-icon">🛠️</div>
+        <div class="quick-contact-info">
+          <h4>Technical Support</h4>
+          <p>Get help with our platform</p>
+          <p><a href="mailto:support@smarteducation.com">support@smarteducation.com</a></p>
+        </div>
+      </div>
+      
+      <div class="quick-contact-item">
+        <div class="quick-contact-icon">🤝</div>
+        <div class="quick-contact-info">
+          <h4>Partnerships</h4>
+          <p>Collaborate with us</p>
+          <p><a href="mailto:partnerships@smarteducation.com">partnerships@smarteducation.com</a></p>
+        </div>
+      </div>
+      
+      <div class="quick-contact-item">
+        <div class="quick-contact-icon">📰</div>
+        <div class="quick-contact-info">
+          <h4>Media & Press</h4>
+          <p>Press inquiries and interviews</p>
+          <p><a href="mailto:media@smarteducation.com">media@smarteducation.com</a></p>
+        </div>
+      </div>
+      
+      <div class="quick-contact-item">
+        <div class="quick-contact-icon">💼</div>
+        <div class="quick-contact-info">
+          <h4>Careers</h4>
+          <p>Join our team</p>
+          <p><a href="mailto:careers@smarteducation.com">careers@smarteducation.com</a></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Office Locations -->
+  <div class="locations-section">
+    <h2>Our Global Presence</h2>
+    <div class="locations-grid">
+      
+      <div class="location-card">
+        <div class="location-header">
+          <span class="location-flag">🇮🇳</span>
+          <h3>Headquarters - India</h3>
+        </div>
+        <div class="address">
+          Smart Education Campus<br>
+          Innovation Hub, Sector 12<br>
+          Poman, Maharashtra 412108<br>
+          India
+        </div>
+        <div class="contact-details">
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <p><strong>Email:</strong> india@smarteducation.com</p>
+          <p><strong>Hours:</strong> Mon-Fri 9:00 AM - 6:00 PM IST</p>
+        </div>
+      </div>
+      
+      <div class="location-card">
+        <div class="location-header">
+          <span class="location-flag">🇺🇸</span>
+          <h3>North America Office</h3>
+        </div>
+        <div class="address">
+          Smart Education Inc.<br>
+          1234 Innovation Drive<br>
+          San Francisco, CA 94105<br>
+          United States
+        </div>
+        <div class="contact-details">
+          <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+          <p><strong>Email:</strong> usa@smarteducation.com</p>
+          <p><strong>Hours:</strong> Mon-Fri 8:00 AM - 5:00 PM PST</p>
+        </div>
+      </div>
+      
+      <div class="location-card">
+        <div class="location-header">
+          <span class="location-flag">🇬🇧</span>
+          <h3>Europe Office</h3>
+        </div>
+        <div class="address">
+          Smart Education Ltd.<br>
+          45 Education Street<br>
+          London EC2A 4DP<br>
+          United Kingdom
+        </div>
+        <div class="contact-details">
+          <p><strong>Phone:</strong> +44 20 7123 4567</p>
+          <p><strong>Email:</strong> europe@smarteducation.com</p>
+          <p><strong>Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM GMT</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How do I get started with Smart Education?
+      </div>
+      <div class="faq-answer">
+        Getting started is easy! Simply fill out our contact form above, and our admissions team will reach out to you within 24 hours to discuss your learning goals and recommend the best program for your needs.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        What technical requirements do I need?
+      </div>
+      <div class="faq-answer">
+        You'll need a reliable internet connection, a computer or tablet, and a modern web browser. Our platform works on Windows, Mac, iOS, and Android devices. Specific requirements vary by program level.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Do you offer financial aid or scholarships?
+      </div>
+      <div class="faq-answer">
+        Yes! We offer various financial assistance programs including merit-based scholarships, need-based aid, and flexible payment plans. Contact our financial aid office for more information about available options.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Can I try a demo before enrolling?
+      </div>
+      <div class="faq-answer">
+        Absolutely! We offer free demo sessions for all our programs. You can experience our interactive learning platform, meet with instructors, and see how our AI-powered tools work before making any commitment.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How do you ensure the quality of online education?
+      </div>
+      <div class="faq-answer">
+        Our programs are developed by education experts and industry professionals. We use advanced learning analytics, regular assessments, and continuous feedback to ensure high-quality educational outcomes that meet international standards.
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media Section -->
+  <div class="social-section">
+    <h2>Connect With Us</h2>
+    <p>Follow us on social media for the latest updates, educational tips, and community discussions</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/" class="social-icon instagram" target="_blank">
+        📷
+      </a>
+      <a href="https://youtube.com/" class="social-icon youtube" target="_blank">
+        ▶️
+      </a>
+      <a href="https://twitter.com/" class="social-icon twitter" target="_blank">
+        🐦
+      </a>
+      <a href="https://linkedin.com/company/" class="social-icon linkedin" target="_blank">
+        💼
+      </a>
+      <a href="https://facebook.com/" class="social-icon facebook" target="_blank">
+        👤
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="cta-section">
+    <h3>Ready to Transform Your Learning Experience?</h3>
+    <p>Don't wait to start your smart education journey. Our team is here to help you succeed!</p>
+    <div class="cta-buttons">
+      <a href="#contactForm" class="cta-button">Send Message</a>
+      <a href="tel:+917045200510" class="cta-button">Call Now</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Smart Education Initiative | Connecting Learners Worldwide</p>
+</footer>
+
+<script>
+  function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const isActive = element.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+      element.classList.add('active');
+      answer.classList.add('active');
+    }
+  }
+  
+  // Form submission handler
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you within 24 hours.');
+    this.reset();
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
